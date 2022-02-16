@@ -1,0 +1,34 @@
+* {
+    color: red;
+}
+
+#main{
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+}
+
+.main{
+    border: 2px solid red;
+    width: 200px;
+    margin: 20px;
+    height: 200px;
+}
+
+ul{
+    list-style: none;
+    color: black;
+    font-size: 30px;
+}
+
+#container .box{
+    border: 4px solid green;
+    width: 20px;
+    height: 20px;
+
+}
+
+#main > .box{
+    color: orange;
+    font-size: 40px;
+}
