@@ -1,33 +1,22 @@
-function newsort(arr) {
-  for (var i = 0; i < arr.length; ++i) {
-    var min = i;
-    for (var j = i; j < arr.length; ++j) {
-      if (arr[min] > arr[j]) {
-        min = j;
-      }
-    }
+function minAndMaxSum(arr, n, m) {
+  arr = arr.sort((a,b) => a-b)
+  var diff = n-m
+  var sum1 = 0
+  var sum2 = 0
 
-    var temp = arr[min];
-    arr[min] = arr[i];
-    arr[i] = temp;
-  }
-  return arr;
-}
-
-
-function minMax(array, n) {
-  var maxValue = 0;
-  var minValue = 0
-  var arr = newsort(array);
-//   console.log("arr-", arr);
-
-  for (var i = 0, j = n - 1; i < n - 1; i++, j--) {
-    maxValue += arr[j];
-    minValue += arr[i]
+  for (var i = 0; i < diff; i++){
+    sum1 += arr[i]
   }
 
-  console.log(maxValue - minValue);
+  arr = arr.sort((a,b) => b-a)
+
+  for (var i = 0; i < diff; i++){
+    sum2 += arr[i]
+  }
+
+  console.log(sum2 - sum1)
 }
+
 
 
 function runProgram(input) {
@@ -37,10 +26,10 @@ function runProgram(input) {
   var testCases = +input[0]
   var line = 1;
   for (var i = 0; i < testCases; i++){
-      var [n, minValue] = input[line++].trim().split(" ").map(Number)
+      var [n, m] = input[line++].trim().split(" ").map(Number)
       var array = input[line++].trim().split(" ").map(Number);
 
-      minMax(array, n)
+      minAndMaxSum(array, n, m)
   }
 
 }
