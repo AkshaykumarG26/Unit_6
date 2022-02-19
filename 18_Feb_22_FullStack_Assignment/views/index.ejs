@@ -1,12 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main Page</title>
-</head>
-<body>
-    <h1>Testing </h1>
-</body>
+
+    <style>
+      #showData {
+        display: grid;
+        grid-template-columns: repeat(3, 30%);
+        grid-gap: 30px;
+        padding-left: 20px;
+        align-items: stretch;
+      }
+
+      #showData > div {
+        border: 1px solid gray;
+      }
+
+      #showData img {
+        width: 80%;
+        padding: 20px;
+      }
+
+      #showdata h3 {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    
+    <div id="showData"></div>
+  </body>
 </html>
+
+<script>
+  var parent = document.getElementById("showData");
+
+  async function showTeacher() {
+    parent.innerHTML = null;
+
+    try {
+      let res = await fetch(`http://localhost:2122/teacher`);
+
+      let data = await res.json();
+        console.log(data)
+      showData(data);
+    } catch (e) {
+      console.log("e:", e);
+    }
+  }
+
+  function showData(teacher) {
+    teacher.forEach(function (m) {
+      let name = document.createElement("h3");
+      name.innerHTML = m.name;
+
+      let gender = document.createElement("h4")
+      gender.innerHTML = m.gender
+
+      let subject = document.createElement("h2")
+      subject.innerHTML = m.subject
+      parent.append(name, gender, subject);
+    });
+  }
+  
+showData()
+  // showTeacher("avatar")
+
+</script>
