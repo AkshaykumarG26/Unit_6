@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SignUp</title>
+    </head>
+    <body>
+        <div class="Sign-Up-form">
+            <h1>Job App Form</h1>
+        <form method="post">
+            <label for="name"><b>Name*:</b>
+                <input id="name" type="text" placeholder="Enter Name" name="name" required></label>
+            <label for="email"><b>Email*:</b>
+                <input id="email" type="email" placeholder="Enter Email" name="email" required></label><br>
+            <lebel for="gender"><b>Gender*:</b>
+                Male<input type="radio" name="gender" required>
+                Female<input type="radio" name="gender"required></lebel><br>
+            <label for="laptops"><b>Laptop Brands:</b>
+                <select id="laptops">
+                        <option value="">select</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Asus">Asus</option>
+                        <option value="HP">HP</option>
+                </select>
+                <label for="age"><b>Age*:</b>
+                    <input id="age" type="number" min="18" max="100" required placeholder="Enter Age"/></label>
+                <label for="dob"><b>D.O.B:</b>
+                    <input id="dob" type="date" required></label><br>
+                <label for="password"><b>*Password:</b>
+                    <input id="password" type="password" placeholder=" create password" required></label>
+
+                    <label for="portfolio"><b>Portfolio</b>
+                        <input type="text" name="" id="portfolio" >
+                    </label>
+
+                    <!-- <input type="password" placeholder=" confirm password" required></lebel><br> -->
+                <button type="submit">Submit</button>
+        </form>
+        
+    </body>
+</html>
+

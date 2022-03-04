@@ -32,7 +32,7 @@ app.use("/admin", adminController)
 
 
 
-app.listen(2122, async function () {
+app.listen(2345, async function () {
   await connect();
-  console.log("listening on 2122");
+  console.log("listening on 2345");
 });
